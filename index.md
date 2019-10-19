@@ -1,3 +1,51 @@
+## Database Connection
+
+```
+<?php
+$servername = "127.0.0.1"; // Database host
+$username = ""; // Database username
+$password = ""; // Password to db user
+$db=""; // Name of database
+
+// Establish connection
+$conn = mysqli_connect($servername, $username, $password,$db);
+?>
+```
+
+## Requirements
+
+```
+<?php
+ob_start();
+session_start();
+
+require '../require/dbconnect.php';
+
+$r=mysqli_query($conn, "SELECT * FROM users WHERE id='" . $_SESSION['id'] . "'");
+$userRow=mysqli_fetch_array($r);
+
+/*
+if (!$query){
+    printf("Error: %s\n", mysqli_error($conn));
+    exit();
+}*/
+?>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Welcome my page
 
 You can use the [editor on GitHub](https://github.com/Kristoffeh/php-doc/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
